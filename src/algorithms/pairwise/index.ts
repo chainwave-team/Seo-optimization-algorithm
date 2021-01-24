@@ -11,7 +11,8 @@ export const pairwise: Pairwise = (arr, arg, index = 0, usedIndexList = []) => {
   }
 
   for (let i = index + 1; i < arr.length; i++) {
-    if (usedIndexList.indexOf(index) === -1 && usedIndexList.indexOf(i) === -1) {
+    // eslint-disable-line @typescript-eslint/prefer-includes
+    if (!usedIndexList.includes(index) && !usedIndexList.includes(i)) {
       if (arr[index] + arr[i] === arg) {
         usedIndexList.push(...[index, i])
       }

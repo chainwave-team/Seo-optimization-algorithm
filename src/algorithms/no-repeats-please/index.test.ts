@@ -1,4 +1,3 @@
-import { assert } from 'chai'
 import { permAlone } from './index'
 
 describe('Algorithms: No Repeats Please', () => {
@@ -18,10 +17,10 @@ describe('Algorithms: No Repeats Please', () => {
     const output = permAlone(args)
 
     it(`permAlone('${args}') should return a number.`, () => {
-      assert.isNumber(output)
+      expect(typeof output).toBe('number')
     })
     it(`permAlone('${args}') should return ${expected}.`, () => {
-      assert.strictEqual(output, expected)
+      expect(output).toStrictEqual(expected)
     })
   })
 })

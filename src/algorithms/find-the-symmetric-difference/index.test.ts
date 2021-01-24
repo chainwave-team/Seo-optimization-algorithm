@@ -1,4 +1,3 @@
-import { assert } from 'chai'
 import * as index from './index'
 
 describe('Algorithms: Find the Symmetric Difference', function () {
@@ -27,16 +26,20 @@ describe('Algorithms: Find the Symmetric Difference', function () {
     }
   ]
 
-  tests.forEach((test) => {
-    const inputAsString = `[${test.args.map(arg => `[${arg.toString()}]`).join(', ')}]`
-    const result = index.sym(...test.args)
+  test('[1,2,3] to equal [1, 2, 3] but not [1, 3, 2] #order matter', () => {
+    expect([1, 2, 3]).toEqual([1, 2, 3])
+    expect([1, 2, 3]).not.toEqual([1, 3, 2])
+  })
 
-    it(`sym(${inputAsString}) should return [${test.expected.toString()}].`, function () {
-      assert.includeOrderedMembers(result, test.expected)
+  tests.forEach(({ args, expected }) => {
+    const inputAsString = `[${args.map(arg => `[${arg.toString()}]`).join(', ')}]`
+    const result = index.sym(...args)
+
+    it(`sym(${inputAsString}) should return [${expected.toString()}].`, function () {
+      expect(result).toEqual(expected)
     })
-    it(`sym(${inputAsString}) should contain only ${test.expected.length} elements.`, function () {
-      assert.isArray(result)
-      assert.lengthOf(result, test.expected.length)
+    it(`sym(${inputAsString}) should contain only ${expected.length} elements.`, function () {
+      expect(result).toHaveLength(expected.length)
     })
   })
 })

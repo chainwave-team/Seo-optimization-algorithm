@@ -1,4 +1,3 @@
-import { assert } from 'chai'
 import { InventoryItem, updateInventory } from './index'
 
 describe('Algorithms: Inventory Update', () => {
@@ -55,12 +54,11 @@ describe('Algorithms: Inventory Update', () => {
     const inventory = updateInventory(arr1, arr2)
 
     it(`updateInventory(${inputAsString}) should return [${arrayToString(expected)}].`, () => {
-      assert.sameDeepMembers(inventory, expected)
+      expect(inventory).toEqual(expected)
     })
 
     it(`updateInventory(${inputAsString}) should contain only ${expected.length} elements.`, () => {
-      assert.isArray(inventory)
-      assert.lengthOf(inventory, expected.length)
+      expect(inventory).toHaveLength(expected.length)
     })
   })
 })

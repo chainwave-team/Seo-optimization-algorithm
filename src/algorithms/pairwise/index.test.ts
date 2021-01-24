@@ -1,4 +1,3 @@
-import { assert } from 'chai'
 import { pairwise } from './index'
 
 describe('Algorithms: Pairwise', () => {
@@ -14,10 +13,10 @@ describe('Algorithms: Pairwise', () => {
     const output = pairwise(arr, arg)
 
     it(`permAlone('${[arr, arg].join(' | ')}') should return a number.`, () => {
-      assert.isNumber(output)
+      expect(typeof output).toBe('number')
     })
     it(`permAlone('${[arr, arg].join(' | ')}') should return ${expected}.`, () => {
-      assert.strictEqual(output, expected)
+      expect(output).toBe(expected)
     })
   })
 })

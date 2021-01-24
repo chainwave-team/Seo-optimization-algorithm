@@ -1,18 +1,14 @@
 export type Input = number[][]
 export type Output = number[]
 
-function includes<T> (arr: T[], item: T): boolean {
-  return arr.indexOf(item) !== -1
-}
-
 function deduplicate<T> (arr: T[]): T[] {
   return [...new Set(arr)]
 }
 
 function getDiff (arr1: number[], arr2: number[]): number[] {
   return [
-    ...arr1.filter(el => !includes(arr2, el)),
-    ...arr2.filter(el => !includes(arr1, el))
+    ...arr1.filter(el => !arr2.includes(el)),
+    ...arr2.filter(el => !arr1.includes(el))
   ]
 }
 

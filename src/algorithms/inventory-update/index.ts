@@ -16,15 +16,21 @@ function addItem (inventory: InventoryItem[], item: InventoryItem): InventoryIte
   return [...inventory, item]
 }
 
+function sortString (a: string, b: string): number {
+  if (a < b) return -1
+  if (a > b) return 1
+  return 0
+}
+
 export function updateInventory (
   arr1: InventoryItem[],
   arr2: InventoryItem[]
 ): InventoryItem[] {
-  return [...arr1, ...arr2].reduce<InventoryItem[]>(
+  const inventory = [...arr1, ...arr2].reduce<InventoryItem[]>(
     (inventory, item) => hasItem(inventory, item)
       ? updateItem(inventory, item)
       : addItem(inventory, item)
-    ,
-    []
-  )
+    , [])
+
+  return inventory.sort((a, b) => sortString(a[1], b[1]))
 }
