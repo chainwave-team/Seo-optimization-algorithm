@@ -20,11 +20,13 @@ npm run start // run tests with --watch
 ## Summary 
 
 ```bash
-algorithms
-    ├── find-the-symmetric-difference
-    ├── inventory-update
-    ├── no-repeats-please
-    └── pairwise
+├── algorithms
+│   ├── find-the-symmetric-difference
+│   ├── inventory-update
+│   ├── no-repeats-please
+│   └── pairwise
+└── data-structures
+    └── stack
 ```
 
 The tree is generated using `tree -d src`.
