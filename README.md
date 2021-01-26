@@ -26,6 +26,7 @@ npm run start // run tests with --watch
 │   ├── no-repeats-please
 │   └── pairwise
 └── data-structures
+    ├── queue
     └── stack
 ```
 
