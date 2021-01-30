@@ -1,5 +1,7 @@
 # The Algorithm Challenge
 
+![Tests](https://github.com/Junscuzzy/the-algorithm-challenge/workflows/Tests/badge.svg?branch=main)
+
 Let's practice the algorithms and data-structures using only Typescript, VIM and TDD (The exercises are from FreeCodeCamp)
 
 ## Process
@@ -26,6 +28,7 @@ npm run start // run tests with --watch
 │   ├── no-repeats-please
 │   └── pairwise
 └── data-structures
+    ├── priority-queue
     ├── queue
     └── stack
 ```
