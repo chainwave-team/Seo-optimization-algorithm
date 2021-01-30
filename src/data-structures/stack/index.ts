@@ -1,20 +1,26 @@
-class Stack<T> {
-  private collection: T[] = []
+import { Collection } from '../types'
 
-  push (item: T): void {
+class Stack<T> extends Collection<T> {
+  protected collection: T[] = []
+
+  addOne (item: T): void {
     this.collection.push(item)
   }
 
-  pop (): T | undefined {
+  removeOne (): T | undefined {
     return this.collection.pop()
   }
 
-  peek (): T | undefined {
-    return this.collection[this.collection.length - 1]
+  next (): T | undefined {
+    return this.collection[this.size() - 1]
+  }
+
+  size (): number {
+    return this.collection.length
   }
 
   isEmpty (): boolean {
-    return this.collection.length === 0
+    return this.size() === 0
   }
 
   clear (): void {

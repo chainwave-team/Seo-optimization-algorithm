@@ -1,15 +1,17 @@
-class Queue<T> {
-  private collection: T[] = []
+import { Collection } from '../types'
 
-  enqueue (element: T): void {
-    this.collection.push(element)
+class Queue<T> extends Collection<T> {
+  protected collection: T[] = []
+
+  addOne (item: T): void {
+    this.collection.push(item)
   }
 
-  dequeue (): T | undefined {
+  removeOne (): T | undefined {
     return this.collection.shift()
   }
 
-  front (): T | undefined {
+  next (): T | undefined {
     return this.collection[0]
   }
 
