@@ -9,7 +9,7 @@
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "clean": "rm -rf dist/*",
-    "test": "jest"
+    "test": "npm run lint && jest"
   },
   "repository": {
     "type": "git",
