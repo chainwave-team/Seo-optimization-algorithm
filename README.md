@@ -23,6 +23,12 @@ npm run start // run tests with --watch
 
 ```bash
 ├── algorithms
+│   ├── basic-sorting
+│   │   ├── bubble-sort
+│   │   ├── insertion-sort
+│   │   ├── merge-sort
+│   │   ├── quick-sort
+│   │   └── selection-sort
 │   ├── find-the-symmetric-difference
 │   ├── inventory-update
 │   ├── no-repeats-please
