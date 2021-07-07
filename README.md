@@ -34,6 +34,7 @@ npm run start // run tests with --watch
 │   ├── no-repeats-please
 │   └── pairwise
 └── data-structures
+    ├── circular-queue
     ├── priority-queue
     ├── queue
     └── stack
