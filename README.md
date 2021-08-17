@@ -1,6 +1,6 @@
 # The Algorithm Challenge
 
-![Tests](https://github.com/Junscuzzy/the-algorithm-challenge/workflows/Tests/badge.svg?branch=main)
+[![Tests](https://github.com/juliencrn/the-algorithm-challenge/actions/workflows/tests.yml/badge.svg)](https://github.com/juliencrn/the-algorithm-challenge/actions/workflows/tests.yml)
 
 I started this repo using Typescript, but now, I want like to practice Rust too. So let's practice the algorithms and data-structures using Typescript and/or Rust! (The exercises are from FreeCodeCamp)
 

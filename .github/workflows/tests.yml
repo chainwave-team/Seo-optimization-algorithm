@@ -7,9 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  typescript:
+    name: Test Typescript side
     runs-on: ubuntu-latest
-    name: Build and Test
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
@@ -19,10 +19,31 @@ jobs:
       with:
         node-version: 13
 
-    - name: Build and Test
+    - name: Run npm test
       run: |
         node --version
         cd typescript
         npm i
         npm test
+
+  rust:
+    name: Test Rust side
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Install stable toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Run cargo test
+        # uses: actions-rs/cargo@v1
+        run: |
+          cd rust
+          cargo test
+
       
