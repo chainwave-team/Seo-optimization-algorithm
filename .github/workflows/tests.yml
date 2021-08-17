@@ -22,6 +22,7 @@ jobs:
     - name: Build and Test
       run: |
         node --version
+        cd typescript
         npm i
         npm test
       
