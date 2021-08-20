@@ -40,10 +40,11 @@ cargo watch -x test # Watch mode
 ### Rust
 ```bash
 src
-├── algorithms
-│  ├── hello.rs
-│  └── mod.rs
-└── lib.rs
+└── project_euler
+   ├── p001.rs
+   ├── p002.rs
+   ├── p003.rs
+   └── p004.rs
 ```
 
 The tree is generated using `exa --tree --git-ignore rust/src`.
