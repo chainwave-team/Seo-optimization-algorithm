@@ -40,21 +40,26 @@ pub fn largest_palindrome_product(n: u32) -> u32 {
     let mut a = number;
     let mut b = number.clone();
     let limit = number / 10;
+    let mut results = Vec::new();
 
-    loop {
-        for _i in 0..limit {
+    for _i in 0..limit {
+        for _j in 0..limit {
             let product = a * b;
 
             if is_palindrome(product) {
-                return product;
+                results.push(product);
+                break;
             } else {
                 a = a - 1;
             }
         }
-
         b = b - 1;
         a = number;
     }
+
+    results.sort();
+
+    results[results.len() - 1]
 }
 
 #[cfg(test)]
